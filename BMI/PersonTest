@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class PersonTest {
+
+	public static void main(String[] args) {
+		ArrayList<Person> People = new ArrayList<Person>(); 
+		Scanner kbReader = new Scanner(System.in); 
+		String response;
+		int age;
+		double mg; 
+		double height;
+		String nom;
+		System.out.print("Would you like to enter some miscellanous information for confidential reasons? ");
+		response = kbReader.nextLine( ); 
+		System.out.println("");
+		System.out.println("I actually don't care what you've answered, you're doing it at least once. ;-)\n");
+	
+			do
+			{
+				System.out.println("");
+				System.out.print("Please enter an age : "); 
+				age = kbReader.nextInt( );  
+				System.out.print("Please enter a weight : "); 
+				mg = kbReader.nextDouble( );  
+				System.out.print("Please enter a height in inches : "); 
+				height = kbReader.nextDouble( );  
+				System.out.print("Please enter the name in which the following information corresponds to : "); 
+				nom = kbReader.next( );  
+				if (nom.equalsIgnoreCase("Samuel Stafford")||nom.equalsIgnoreCase("Samuel")||nom.equalsIgnoreCase("Stafford")||nom.equalsIgnoreCase("Sam")||nom.equalsIgnoreCase("Staff")||nom.equalsIgnoreCase("Sam Stafford")) { 
+					System.out.println("Haha, it's Stafford, lol.");
+				}
+				People.add(new Person(age, mg, height, nom)); 
+				System.out.println(""); 
+				System.out.println("Thanks!");
+				System.out.print("Would you like to continue? (Press N to quit, any key to continue) : ");
+				response = kbReader.next( ); 
+
+
+			}
+			while(!response.equalsIgnoreCase("N"));
+			Person user;
+			for (int i=0; i<People.size();i++) { 
+				user = People.get(i);
+				System.out.println("");
+				System.out.println(user.getBMI());
+			}
+
+	} 
+}
+
