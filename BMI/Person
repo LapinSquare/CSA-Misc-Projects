@@ -1,0 +1,17 @@
+public class Person {
+
+	public int age; 
+	public double weight; 
+	public double height; 
+	public String name; 
+	public Person (int ag, double mg, double hei, String nom) { 
+		age = ag; 
+		weight = mg; 
+		height = hei; 
+		name = nom; 
+	} 
+	public String getBMI() { 
+		return (name+"'s BMI is "+(weight*0.45)/Math.pow(height*0.025, 2)); 
+	}
+
+}
